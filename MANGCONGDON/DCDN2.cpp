@@ -4,6 +4,8 @@ using namespace std;
 const int limit = 1e3+1;
 
 int main() {
+    freopen("DCDN2.INP", "r", stdin);
+    freopen("DCDN2.OUT", "w", stdout);
     int n, tempi, tempj;
     ll a[limit], f[limit] = {0}, mintong = 1e9+1;
     cin >> n;

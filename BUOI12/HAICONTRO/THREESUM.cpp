@@ -4,6 +4,8 @@ using namespace std;
 const int limit = 1e5 + 1;
 
 int main() {
+    freopen("THREESUM.INP", "r", stdin);
+    freopen("THREESUM.OUT", "w", stdout);
     int n;
     ll s;
     pair<ll, int> a[limit];
