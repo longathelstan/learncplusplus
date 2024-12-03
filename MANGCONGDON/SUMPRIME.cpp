@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
-const int limit = 1e5+1;
+const int limit = 1e6+1;
 bool prime[limit];
 ll f[limit] = {0};
 
