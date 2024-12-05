@@ -23,7 +23,7 @@ int main() {
     while(m--) {
         cin >> l >> r;
         if (demko[r] - demko[l - 1] > 0) cout << 0 << endl;
-        else if (demam[r] - demam[l - 1] % 2 == 0) cout << '+' << endl;
+        else if ((demam[r] - demam[l - 1]) % 2 == 0) cout << '+' << endl;
         else cout << '-' << endl;
     }
 }
