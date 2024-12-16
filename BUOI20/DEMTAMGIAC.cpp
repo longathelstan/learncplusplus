@@ -2,11 +2,13 @@
 #define ll long long
 
 using namespace std;
-const int limit = 1e5+1;
+const int limit = 1e4+1;
 
 int main() {
+    freopen("DEMTAMGIAC.INP","r",stdin);
+	freopen("DEMTAMGIAC.OUT","w",stdout);
     int n;
-    ll a[limit], b[limit], c[limit];
+    ll a[limit], b[limit], c[limit], dem = 0;
     cin >> n;
     for (int i = 1; i <= n; i++) cin >> a[i];
     for (int i = 1; i <= n; i++) cin >> b[i];
@@ -17,9 +19,12 @@ int main() {
     sort(c + 1, c + n + 1);
 
     for (int i = 1; i <= n; i++) {
-        for (int j = i; j <= n; i++) {
-
+        for (int j = 1; j <= n; j++) {
+             ll x = a[i], y = b[j];
+             ll t1 = lower_bound(c + 1, c + n + 1, (x+y)) - c;
+             ll t2 = upper_bound(c + 1, c + n + 1, abs(x - y)) - c;
+             dem += (t1 - t2);
         }
     }
-
+    cout << dem;
 }

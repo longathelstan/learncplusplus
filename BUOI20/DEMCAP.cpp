@@ -14,7 +14,10 @@ int main() {
     sort(a + 1, a + n + 1);
     for (int i = 1; i <= n; i++) {
         ll t = k - a[i];
-        if (binary_search(a + i, a + n + 1, t)) dem++;
+        ll t1 = lower_bound(a + i + 1, a + n + 1, t) - a;
+        ll t2 = upper_bound(a + i + 1, a + n + 1, t) - a;
+
+        dem += (t2 - t1);
     }
     cout << dem;
 }

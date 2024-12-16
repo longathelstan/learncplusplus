@@ -16,8 +16,9 @@ int main() {
     for (int i = 1; i <= n; i++) {
         cin >> b[i];
     }
-    for(int i = 1; i <= n; i++) {
+    sort(b + 1, b + n + 1);
+    for (int i = 1; i <= n; i++) {
         ll t = upper_bound(b + 1, b + n + 1, a[i]) - b;
-        cout << n - (n - t + 1) << " ";
+        cout << t - 1 << " ";
     }
 }

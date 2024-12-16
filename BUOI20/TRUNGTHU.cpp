@@ -17,14 +17,22 @@ int main() {
     for (ll i = 1; i <= n; i++) {
         ll s = x - a[i];
         auto t = lower_bound(a + 1, a + n + 1, s) - a;
-        t--;
-
-        if (t >= 0 && t != i) {
+        if (a[t] == s) {
             ll sum = a[i] + a[t];
             if (sum <= x) {
                 maxx = max(maxx, sum);
             }
+        } else {
+            t--;
+
+            if (t >= 0 && t != i) {
+                ll sum = a[i] + a[t];
+                if (sum <= x) {
+                    maxx = max(maxx, sum);
+                }
+            }
         }
+
 
     }
 
