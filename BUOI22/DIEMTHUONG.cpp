@@ -1,11 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
-const int limit = 1e6+1;
+const int limit = 3e6+1;
 
 int main() {
-//    freopen("DIEMTHUONG.INP", "r", stdin);
-//    freopen("DIEMTHUONG.OUT", "w", stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+    freopen("DIEMTHUONG.INP", "r", stdin);
+    freopen("DIEMTHUONG.OUT", "w", stdout);
     int n, m;
     ll dem = 0;
     ll a[limit], b[limit];
