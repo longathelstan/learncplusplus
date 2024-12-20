@@ -2,11 +2,11 @@
 using namespace std;
 #define ll long long
 
-const int limit = 1e5+1;
+const int limit = 1e6+1;
 
 int main() {
-    freopen("SSET.INP", "r", stdin);
-    freopen("SSET.OUT", "w", stdout);
+    //    freopen("SSET.INP", "r", stdin);
+    //    freopen("SSET.OUT", "w", stdout);
     int n, k;
     ll a[limit];
     int d[limit] = {0};
@@ -17,7 +17,7 @@ int main() {
     int l = 1, dem = 0;
     ll res = 0;
 
-    for (int r = 1; r < n; r++) {
+    for (int r = 1; r <= n; r++) {
         d[a[r]]++;
         if (d[a[r]] == 1) dem++;
 
