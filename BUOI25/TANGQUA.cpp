@@ -3,18 +3,13 @@
 using namespace std;
 const int limit = 1e5+1;
 int main() {
-    int n;
+    int n, dem = 0;
     ll a[limit];
-    vector<ll> v;
     cin >> n;
-    for (int i = 1; i <= n; i++) cin >> a[i];
-    for (int i = 1; i <= n; i++) {
-        auto pos = lower_bound(a + 1, a + n + 1, a[i]);
-        if (pos == a + n + 1) continue;
-        else {
-            v.push_back(*pos);
-        }
+    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++) {
+        if (a[i - 1] < a[i]) dem++;
     }
-    cout << n - v.size();
+    cout << n - dem;
 }
 
