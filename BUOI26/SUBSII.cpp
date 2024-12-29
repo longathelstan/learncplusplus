@@ -18,7 +18,7 @@ int main() {
     for (int i = 1; i <= n; i++) {
         tong += a[i];
         if (d.find(tong - k) != d.end()) {
-            dem++;
+            dem+=d[tong - k];
         }
         if (d.find(tong) == d.end()) d[tong] = i;
     }
