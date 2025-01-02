@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 #define ll long long
 using namespace std;
-const int limit = 1e6+8;
+const int limit = 1e4+8;
 int main() {
-    freopen("DCLONGK2.INP", "r", stdin);
-    freopen("DCLONGK2.OUT", "w", stdout);
+//    freopen("DCLONGK2.INP", "r", stdin);
+//    freopen("DCLONGK2.OUT", "w", stdout);
     ios::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
