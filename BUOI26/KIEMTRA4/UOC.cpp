@@ -31,6 +31,11 @@ ll dha(ll n) {
 }
 
 int main() {
+    freopen("UOC.INP", "r", stdin);
+    freopen("UOC.OUT", "w", stdout);
+    ios::sync_with_stdio(false);
+cin.tie(0);
+cout.tie(0);
     sang();
     ll n;
     cin >> n;
