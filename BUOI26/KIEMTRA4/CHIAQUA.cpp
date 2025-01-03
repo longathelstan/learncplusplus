@@ -17,8 +17,8 @@ int main() {
     freopen("CHIAQUA.INP", "r", stdin);
     freopen("CHIAQUA.OUT", "w", stdout);
     ios::sync_with_stdio(false);
-cin.tie(0);
-cout.tie(0);
+    cin.tie(0);
+    cout.tie(0);
     ll x, y;
     cin >> x >> y;
     cout << solve(__gcd(x, y));

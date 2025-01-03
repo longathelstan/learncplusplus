@@ -19,7 +19,6 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
-    sang();
     ll n;
     cin >> n;
     cout << dha(n);

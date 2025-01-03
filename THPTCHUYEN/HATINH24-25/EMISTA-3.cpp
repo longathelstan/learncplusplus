@@ -7,21 +7,15 @@ ll n, k, x, y, f[limit] = {0}, maxx = 0, kq = 0;
 pair<ll, ll> a[limit];
 
 void sub1(ll n, ll k) {
-    unordered_map<ll, ll> mp;
-    for (ll i = 1; i <= n; i++) {
+    for (int i = 1; i <= n; i++) {
         cin >> x >> y;
-        mp[x] += y;
-        maxx = max(maxx, x);
+        a[i].first = x;
+        a[i].second = y;
     }
-    for (ll i = 1; i <= maxx; i++) {
-        f[i] = f[i - 1] + (mp.count(i) ? mp[i] : 0);
+    sort(a + 1, a + n + 1);
+    for (int i = 1; i <= n; i++) {
+
     }
-    for (ll i = 1; i <= maxx; i++) {
-        ll start = max(1LL, i - k);
-        ll endd = min(maxx, i + k);
-        kq = max(kq, f[endd] - f[start - 1]);
-    }
-    cout << kq;
 }
 
 void sub2(ll n, ll k) {
