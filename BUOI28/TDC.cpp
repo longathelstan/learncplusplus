@@ -12,11 +12,11 @@ void sang() {
 }
 
 int main() {
-freopen("TDC.INP", "r", stdin);
-freopen("TDC.OUT", "w", stdout);
-ios::sync_with_stdio(false);
-cin.tie(0);
-cout.tie(0);
+    freopen("TDC.INP", "r", stdin);
+    freopen("TDC.OUT", "w", stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
     sang();
     ll n, a[limit], f[limit] = {0}, q;
     cin >> n >> q;

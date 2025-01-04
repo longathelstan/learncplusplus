@@ -3,11 +3,11 @@
 using namespace std;
 const int limit = 1e5+8;
 int main() {
-freopen("MAX3.INP", "r", stdin);
-freopen("MAX3.OUT", "w", stdout);
-ios::sync_with_stdio(false);
-cin.tie(0);
-cout.tie(0);
+    freopen("MAX3.INP", "r", stdin);
+    freopen("MAX3.OUT", "w", stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
     ll n;
     set<ll> s;
     cin >> n;
