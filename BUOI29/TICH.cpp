@@ -16,25 +16,51 @@ void sub1(){
 	cout<<smax;
 }
 void sub2() {
-    ll ans = 0;
-    ll i = 1, j = 1;
-    while(i <= n && j <= n) {
-        ll hanhiu1 = a[i] * a[j];
-        ll hanhiu2 = b[i]* b[j];
-        if (hanhiu1 < hanhiu2) {
-            ans = max(ans, hanhiu1);
-            i++;
-        } else {
-            ans = max(ans, hanhiu2);
-            j++;
-        }
-        if (j == n) {
-            i++;
+    ans = -1e16+1;
+    for (int i = 1; i <= n; i++) {
+        cin >> a[i];
+    }
+    for (int i = 1; i <= n; i++) {
+        cin >> b[i];
+        if(b[i]==a[i])
+        {
+            d++;
         }
     }
+    if(d==n)
+    {
+        sort(a+1,a+n+1);
+        cout<<a[n]*a[n-1];
+    }
+    else
+    {
+    int i = 1,j = 1;
+    while(i<=n&&j<=n) {
+        if(i==j) j=i+1;
+    	long long haanhiuuoi1 = a[i]*a[j];
+    	long long haanhiuuoiii2 = b[i]*b[j];
+    	if(haanhiuuoi1<haanhiuuoiii2) {
+    		ans = max(ans,haanhiuuoi1);
+    		i++;
+    	}
+    	else if(haanhiuuoi1>haanhiuuoiii2)
+        {
+    		ans = max(ans,haanhiuuoiii2);
+    		j++;
+		}
+		else
+		{
+		    ans = max(ans,min(haanhiuuoi1,haanhiuuoiii2));
+		    i++;
+		    j++;
+		}
+		if(j==n) {
+			i++;
+		}
+    }
     cout << ans;
+    }
 }
-
 int main(){
 	cin>>n;
 	for(ll i=1;i<=n;i++){
