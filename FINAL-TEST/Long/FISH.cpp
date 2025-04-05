@@ -19,13 +19,10 @@ void sub2() {
 }
 void sub3() {
     ll tong = 0;
+    ll minnreall = a[1];
     for (ll i = 1; i <= n; i++) {
-        if (a[i] != minn) {
-            tong += (a[i] * 3);
-        } else {
-            tong += (a[i] * 3 * (n - i + 1));
-            break;
-        }
+        minnreall = min(minnreall, a[i]);
+        tong += 3*minnreall;
     }
     cout << tong;
 }
