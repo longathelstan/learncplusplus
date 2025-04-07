@@ -88,8 +88,8 @@ void inject(HANDLE hTargetProcess, const char* dllPath) {
 }
 
 int main() {
-    printf("[!] Cracked by Team John Xina Spec in less than 1 minute.\n");
-    printf("[!] Github: https://github.com/JohnXina-spec\n");
+    printf("[!] Have ur known tlowng yet?\n");
+    printf("[!] Github: https://github.com/longathelstan\n");
 
     ProcessInfo processList[256] = { 0 };
     char dllPath[MAX_PATH];
