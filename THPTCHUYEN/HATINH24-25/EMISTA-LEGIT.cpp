@@ -1,30 +1,29 @@
 #include <bits/stdc++.h>
-using namespace std;
 #define ll long long
-const int limit = 1e4+1;
+using namespace std;
+
 int main() {
-    ll n, k, x, maxx = 0, kq = 0;
-    ll y, d[limit] = {0}, f[limit] = {0};
-    pair<ll, ll> a[limit];
+    ll n, k, x, y, sum = 0, maxx = 0;
+    map<ll, ll> mp;
+    map<ll, ll> f;
     cin >> n >> k;
     for (ll i = 1; i <= n; i++) {
         cin >> x >> y;
-        maxx = max(maxx, x);
-        a[i].first = x;
-        a[i].second = y;
+        mp.insert({x, y});
     }
-    for (ll i = 1; i <= n; i++) {
-        d[a[i].first] = a[i].second;
+    cout << endl;
+    for (auto x : mp) {
+        sum += x.second;
+        f.insert({x.first, sum});
     }
-    for (ll i = 1; i <= maxx; i++) {
-        f[i] = f[i - 1] + d[i];
-//        cout << i << " " << d[i] << endl;
+    for (auto x : f) {
+//        cout << x.first << " " << x.second << endl;
+        auto endd = f.upper_bound(x.first + k * 2);
+        if (endd == f.end()) {
+            endd = --f.end();
+        } else --endd;
+        maxx = max(maxx, (*endd).second - x.second);
+
     }
-    for (ll i = 1; i <= maxx; i++) {
-//        kq = max(kq, (f[i] - f[max(0, i - k - 1)]) + (f[min(maxx, i + k + 1)] - f[i]));
-        ll start = max(0LL, i - k - 1LL);
-        ll end = min(maxx, i + k + 1LL);
-        kq = max(kq, (f[i] - f[start]) + (f[end] - f[i]));
-    }
-    cout << kq;
+    cout << maxx;
 }
