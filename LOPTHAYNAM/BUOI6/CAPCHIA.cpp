@@ -9,21 +9,19 @@ const int limit = 1e6+8;
 int main() {
     io;
     file;
-    int n, a[limit], maxA = 0, d[limit] = {0};
-    ll dem = 0;
+    ll n, a[limit], d[limit] = {0}, MaxA = -1e9-8;
     cin >> n;
-    for (int i = 0; i < n; i++) {
+    for (ll i = 1; i <= n; i++) {
         cin >> a[i];
         d[a[i]]++;
-        maxA = max(maxA, a[i]);
+        MaxA = max(MaxA, a[i]);
     }
-    for (int i = 1; i <= maxA; i++) {
+    ll dem = 0;
+    for (ll i = 1; i <= MaxA; i++) {
         if (d[i] == 0) continue;
-        dem += 1LL * d[i] * (d[i] - 1) / 2;
-        for (int j = i * 2; j <= maxA; j += i) {
-            if (d[j]) {
-                dem += 1LL * d[i] * d[j];
-            }
+        dem += d[i] * (d[i] - 1) / 2;
+        for (ll j = i * 2; j <= MaxA; j += i) {
+            if (d[j]) dem += d[i] * d[j];
         }
     }
     cout << dem;
