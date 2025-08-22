@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int digitSum(int x) {
+    int s = 0;
+    while (x) { s += x % 10; x /= 10; }
+    return s;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int l, r;
+    cin >> l >> r;
+
+    const int LIMIT = 100000;
+    const int MAXSUM = 70;
+    vector<int> mn(MAXSUM, -1), mx(MAXSUM, -1);
+
+    for (int x = l; x <= r && x < l + LIMIT; x++) {
+        int s = digitSum(x);
+        if (mn[s] == -1) mn[s] = x;
+    }
+
+    for (int x = r; x >= l && x > r - LIMIT; x--) {
+        int s = digitSum(x);
+        if (mx[s] == -1) mx[s] = x;
+    }
+
+    int bestDiff = -1, a = -1, b = -1;
+    for (int s = 1; s < MAXSUM; s++) {
+        if (mn[s] != -1 && mx[s] != -1) {
+            if (mx[s] - mn[s] > bestDiff) {
+                bestDiff = mx[s] - mn[s];
+                a = mn[s];
+                b = mx[s];
+            }
+        }
+    }
+
+    if (bestDiff == -1) cout << "-1\n";
+    else cout << a << " " << b << " " << bestDiff << "\n";
+}
